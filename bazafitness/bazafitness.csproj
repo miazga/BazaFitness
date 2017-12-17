@@ -92,10 +92,15 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator.cs" />
+    <Compile Include="DAL\CalculatorAdapter.cs" />
     <Compile Include="DAL\Products.cs" />
     <Compile Include="DAL\ProductAdapter.cs" />
     <Compile Include="DAL\Recipe.cs" />
+    <Compile Include="DAL\RecipeAdapter.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Model\UserData.cs" />
+    <Compile Include="RecipeActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +113,18 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Activity_Product.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\calculator_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_list_recipe.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Activity_Recipe.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_list_calculator.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -124,7 +141,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Activities\" />
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
 </Project>

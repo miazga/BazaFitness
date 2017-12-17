@@ -36,6 +36,10 @@ C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\R.cs.flag
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\uploadflags.txt
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\res\layout\row_list_product.xml
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\res\layout\activity_product.xml
+C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\res\layout\calculator_layout.xml
+C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\res\layout\row_list_recipe.xml
+C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\res\layout\activity_recipe.xml
+C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\res\layout\row_list_calculator.xml
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\bazafitness.csprojResolveAssemblyReference.cache
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\bin\Debug\bazafitness.dll.mdb
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Debug\android\assets\bazafitness.dll.mdb

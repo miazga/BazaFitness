@@ -26,7 +26,7 @@ namespace bazafitness
         public int Carbohydrate { get; set; }
         [JsonProperty(PropertyName = "PRO_FATS")]
         public int Fats { get; set; }
-        [JsonProperty(PropertyName = "deleted")]
+        [JsonProperty(PropertyName = "Checked")]
         public bool Deleted { get; set; }
 
     }

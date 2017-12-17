@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v25</xs:documentation>
-    <xs:documentation>15.12.2017 18:26:26</xs:documentation>
+    <xs:documentation>17.12.2017 19:33:48</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -3619,6 +3619,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -3664,6 +3665,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -4275,6 +4277,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -4806,6 +4809,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -6010,6 +6014,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -6345,6 +6350,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -11059,6 +11065,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -11104,6 +11111,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -11718,6 +11726,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -11763,6 +11772,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -11808,6 +11818,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -16852,6 +16863,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -16991,15 +17003,35 @@
           <xs:restriction base="xs:string">
             <xs:enumeration value="@+id/" />
             <xs:enumeration value="@+id/checkedTextView1" />
-            <xs:enumeration value="@id/buttonAddProduct" />
-            <xs:enumeration value="@id/checkProduct" />
-            <xs:enumeration value="@id/checkToDoItem" />
+            <xs:enumeration value="@id/activity" />
+            <xs:enumeration value="@id/age" />
+            <xs:enumeration value="@id/btnAddProduct" />
+            <xs:enumeration value="@id/btnAddRecipe" />
+            <xs:enumeration value="@id/buttonAddProducts" />
+            <xs:enumeration value="@id/checkProducts" />
+            <xs:enumeration value="@id/checkRecipe" />
+            <xs:enumeration value="@id/height" />
             <xs:enumeration value="@id/LinearLayout1" />
-            <xs:enumeration value="@id/listViewProduct" />
-            <xs:enumeration value="@id/listViewToDo" />
+            <xs:enumeration value="@id/listViewProducts" />
+            <xs:enumeration value="@id/listViewRecipes" />
             <xs:enumeration value="@id/menu_refresh" />
-            <xs:enumeration value="@id/textNewProduct" />
+            <xs:enumeration value="@id/pro_calories" />
+            <xs:enumeration value="@id/pro_carbs" />
+            <xs:enumeration value="@id/pro_fats" />
+            <xs:enumeration value="@id/pro_name" />
+            <xs:enumeration value="@id/pro_proteins" />
+            <xs:enumeration value="@id/rec_content" />
+            <xs:enumeration value="@id/rec_icon" />
+            <xs:enumeration value="@id/rec_name" />
+            <xs:enumeration value="@id/sex" />
+            <xs:enumeration value="@id/spinnerMeal" />
+            <xs:enumeration value="@id/target" />
             <xs:enumeration value="@id/textViewTitle" />
+            <xs:enumeration value="@id/txtContent" />
+            <xs:enumeration value="@id/txtIcon" />
+            <xs:enumeration value="@id/txtMeal" />
+            <xs:enumeration value="@id/txtName" />
+            <xs:enumeration value="@id/weight" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -17334,6 +17366,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -18556,6 +18589,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -21020,6 +21054,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -21222,6 +21257,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -21481,6 +21517,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -22178,6 +22215,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -24088,6 +24126,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -26052,6 +26091,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -27039,6 +27079,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -30445,6 +30486,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -31715,6 +31757,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -32904,6 +32947,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -34565,6 +34609,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -34610,6 +34655,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -38184,6 +38230,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -38229,6 +38276,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -40715,6 +40763,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -40864,6 +40913,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />
@@ -41996,6 +42046,7 @@
             <xs:enumeration value="@string/add_textbox_hint" />
             <xs:enumeration value="@string/app_name" />
             <xs:enumeration value="@string/checkbox_text" />
+            <xs:enumeration value="@string/meal_prompt" />
             <xs:enumeration value="@string/menu_refresh" />
             <xs:enumeration value="@string/mobile_services" />
             <xs:enumeration value="@android:string/cancel" />

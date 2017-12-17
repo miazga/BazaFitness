@@ -1,3 +1,7 @@
+bazafitness.Calculator, bazafitness;md52b54e12525c028d30d81c3bd14720041.Calculator
+bazafitness.Calculator, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52b54e12525c028d30d81c3bd14720041.Calculator
+bazafitness.Calculator;md52b54e12525c028d30d81c3bd14720041.Calculator
+bazafitness.Calculator;md52b54e12525c028d30d81c3bd14720041.Calculator
 bazafitness.ProductWrapper, bazafitness;md52b54e12525c028d30d81c3bd14720041.ProductWrapper
 bazafitness.ProductWrapper, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52b54e12525c028d30d81c3bd14720041.ProductWrapper
 bazafitness.ProductWrapper;md52b54e12525c028d30d81c3bd14720041.ProductWrapper
@@ -6,6 +10,14 @@ bazafitness.MainActivity, bazafitness;md52b54e12525c028d30d81c3bd14720041.MainAc
 bazafitness.MainActivity, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52b54e12525c028d30d81c3bd14720041.MainActivity
 bazafitness.MainActivity;md52b54e12525c028d30d81c3bd14720041.MainActivity
 bazafitness.MainActivity;md52b54e12525c028d30d81c3bd14720041.MainActivity
+bazafitness.RecipeActivity, bazafitness;md52b54e12525c028d30d81c3bd14720041.RecipeActivity
+bazafitness.RecipeActivity, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52b54e12525c028d30d81c3bd14720041.RecipeActivity
+bazafitness.RecipeActivity;md52b54e12525c028d30d81c3bd14720041.RecipeActivity
+bazafitness.RecipeActivity;md52b54e12525c028d30d81c3bd14720041.RecipeActivity
+bazafitness.DAL.CalculatorAdapter, bazafitness;md5e73181269fb4fb5830d4689b9794c4df.CalculatorAdapter
+bazafitness.DAL.CalculatorAdapter, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e73181269fb4fb5830d4689b9794c4df.CalculatorAdapter
+bazafitness.DAL.CalculatorAdapter;md5e73181269fb4fb5830d4689b9794c4df.CalculatorAdapter
+bazafitness.dal.CalculatorAdapter;md5e73181269fb4fb5830d4689b9794c4df.CalculatorAdapter
 bazafitness.DAL.ProductAdapter, bazafitness;md5e73181269fb4fb5830d4689b9794c4df.ProductAdapter
 bazafitness.DAL.ProductAdapter, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e73181269fb4fb5830d4689b9794c4df.ProductAdapter
 bazafitness.DAL.ProductAdapter;md5e73181269fb4fb5830d4689b9794c4df.ProductAdapter
@@ -14,6 +26,10 @@ bazafitness.DAL.RecipeWrapper, bazafitness;md5e73181269fb4fb5830d4689b9794c4df.R
 bazafitness.DAL.RecipeWrapper, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e73181269fb4fb5830d4689b9794c4df.RecipeWrapper
 bazafitness.DAL.RecipeWrapper;md5e73181269fb4fb5830d4689b9794c4df.RecipeWrapper
 bazafitness.dal.RecipeWrapper;md5e73181269fb4fb5830d4689b9794c4df.RecipeWrapper
+bazafitness.DAL.RecipeAdapter, bazafitness;md5e73181269fb4fb5830d4689b9794c4df.RecipeAdapter
+bazafitness.DAL.RecipeAdapter, bazafitness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e73181269fb4fb5830d4689b9794c4df.RecipeAdapter
+bazafitness.DAL.RecipeAdapter;md5e73181269fb4fb5830d4689b9794c4df.RecipeAdapter
+bazafitness.dal.RecipeAdapter;md5e73181269fb4fb5830d4689b9794c4df.RecipeAdapter
 Xamarin.Auth._MobileServices.AndroidAccountStore/SecretAccount, Microsoft.WindowsAzure.Mobile.Ext;md56beaf3ca16f9b29c56822643de3b05fa.AndroidAccountStore_SecretAccount
 Xamarin.Auth._MobileServices.AndroidAccountStore+SecretAccount, Microsoft.WindowsAzure.Mobile.Ext, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35;md56beaf3ca16f9b29c56822643de3b05fa.AndroidAccountStore_SecretAccount
 Xamarin.Auth._MobileServices.AndroidAccountStore.SecretAccount;md56beaf3ca16f9b29c56822643de3b05fa.AndroidAccountStore_SecretAccount

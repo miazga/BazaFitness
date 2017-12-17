@@ -20,7 +20,13 @@ namespace bazafitness.DAL
         public string Name { get; set; }
         [JsonProperty(PropertyName = "REC_CONTENT")]
         public string Content { get; set; }
-        
+        [JsonProperty(PropertyName = "REC_ICON")]
+        public string Icon { get; set; }
+        [JsonProperty(PropertyName = "REC_MEAL")]
+        public string Meal { get; set; }
+        [JsonProperty(PropertyName = "checked")]
+        public bool Deleted { get; set; }
+
     }
 
     public class RecipeWrapper : Java.Lang.Object

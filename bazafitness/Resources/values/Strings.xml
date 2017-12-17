@@ -6,4 +6,25 @@
     <string name="mobile_services">Azure App Service</string>
     <string name="menu_refresh">Refresh</string>
     <string name="checkbox_text">Item Text</string>
+    <string name="meal_prompt">Wybierz porę obiadową</string>
+    <string-array name="meal_array">
+      <item>Śniadanie</item>
+      <item>Obiad</item>
+      <item>Kolacja</item>
+    </string-array>
+  <string-array name="sex_array">
+    <item>Mężczyzna</item>
+    <item>Kobieta</item>
+  </string-array>
+  <string-array name="activity_array">
+    <item>Raczej siedząca</item>
+    <item>Umiarkowana</item>
+    <item>Dużo ruchu</item>
+  </string-array>
+  <string-array name="target_array">
+    <item>Spadek wagi</item>
+    <item>Utrzymanie wagi</item>
+    <item>Wzrost wagi</item>
+  </string-array>
+
 </resources>

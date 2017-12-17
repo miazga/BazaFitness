@@ -14,55 +14,60 @@ using Microsoft.WindowsAzure.MobileServices;
 
 namespace bazafitness
 {
-    [Activity(Label = "MainActivity")]
-    public class MainActivity : Activity
+    [Activity(Label = "RecipeActivity")]
+    public class RecipeActivity : Activity
     {
         // Client reference.
         private MobileServiceClient client;
 
-        private IMobileServiceTable<Products> productTable;
+        private IMobileServiceTable<Recipe> recipeTable;
 
         // Adapter to map the items list to the view
-        private ProductAdapter adapter;
-
-        // EditText containing the "New Products" text
-        private EditText pro_name;
-        private EditText pro_calories;
-        private EditText pro_proteins;
-        private EditText pro_carbs;
-        private EditText pro_fats;
+        private RecipeAdapter adapter;
+        
+        private EditText rec_icon;
+        private EditText rec_name;
+        private EditText rec_content;
+        private Spinner spinner;
 
         // URL of the mobile app backend.
         const string applicationURL = @"https://bazafitness.azurewebsites.net";
 
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Activity_Product);
+            SetContentView(Resource.Layout.Activity_Recipe);
 
             CurrentPlatform.Init();
 
             // Create the client instance, using the mobile app backend URL.
             client = new MobileServiceClient(applicationURL);
 
-            productTable = client.GetTable<Products>();
+            recipeTable = client.GetTable<Recipe>();
 
-            pro_name = FindViewById<EditText>(Resource.Id.pro_name);
-            pro_calories = FindViewById<EditText>(Resource.Id.pro_calories);
-            pro_proteins = FindViewById<EditText>(Resource.Id.pro_proteins);
-            pro_carbs = FindViewById<EditText>(Resource.Id.pro_carbs);
-            pro_fats = FindViewById<EditText>(Resource.Id.pro_fats);
+            rec_icon = FindViewById<EditText>(Resource.Id.rec_icon);
+            rec_name = FindViewById<EditText>(Resource.Id.rec_name);
+            rec_content = FindViewById<EditText>(Resource.Id.rec_content);
 
             // Create an adapter to bind the items with the view
-            adapter = new ProductAdapter(this, Resource.Layout.Row_List_Product);
-            var listViewProdct = FindViewById<ListView>(Resource.Id.listViewProducts);
-            listViewProdct.Adapter = adapter;
+            adapter = new RecipeAdapter(this, Resource.Layout.row_list_recipe);
+            var listViewToDo = FindViewById<ListView>(Resource.Id.listViewRecipes);
+            listViewToDo.Adapter = adapter;
+
+            spinner = FindViewById<Spinner>(Resource.Id.spinnerMeal);
+            
+            var spinnerAdapter = ArrayAdapter.CreateFromResource(
+                this, Resource.Array.meal_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            spinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner.Adapter = spinnerAdapter;
 
             // Load the items from the mobile app backend.
             OnRefreshItemsSelected();
         }
+
 
         //Initializes the activity menu
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -97,12 +102,12 @@ namespace bazafitness
         {
             try
             {
-                // Get the items that weren't marked as checked and add them in the adapter
-                var list = await productTable.Where(p => p.Deleted == false).ToListAsync();
+                // Get the items that weren't marked as completed and add them in the adapter
+                var list = await recipeTable.Where(item => item.Deleted == false).ToListAsync();
 
                 adapter.Clear();
 
-                foreach (Products current in list)
+                foreach (Recipe current in list)
                     adapter.Add(current);
 
             }
@@ -112,7 +117,7 @@ namespace bazafitness
             }
         }
 
-        public async Task CheckItem(Products item)
+        public async Task CheckItem(Recipe item)
         {
             if (client == null)
             {
@@ -124,7 +129,7 @@ namespace bazafitness
             try
             {
                 // Update the new item in the local store.
-                await productTable.UpdateAsync(item);
+                await recipeTable.UpdateAsync(item);
                 if (item.Deleted)
                     adapter.Remove(item);
 
@@ -138,26 +143,26 @@ namespace bazafitness
         [Java.Interop.Export()]
         public async void AddItem(View view)
         {
-            if (client == null || string.IsNullOrWhiteSpace(pro_name.Text) || string.IsNullOrWhiteSpace(pro_calories.Text) || string.IsNullOrWhiteSpace(pro_carbs.Text) || string.IsNullOrWhiteSpace(pro_fats.Text) || string.IsNullOrWhiteSpace(pro_proteins.Text))
+            if (client == null || string.IsNullOrWhiteSpace(rec_icon.Text) || string.IsNullOrWhiteSpace(rec_content.Text) || string.IsNullOrWhiteSpace(rec_name.Text) || string.IsNullOrWhiteSpace(spinner.SelectedItem.ToString()))
             {
                 return;
             }
 
             // Create a new item
-            var item = new Products()
+            var item = new Recipe()
             {
-                Name = pro_name.Text,
-                Fats =Int32.Parse(pro_fats.Text),
-                Calories = Int32.Parse(pro_calories.Text),
-                Carbohydrate = Int32.Parse(pro_carbs.Text),
-                Proteins = Int32.Parse(pro_proteins.Text),
+                Name = rec_name.Text,
+                Icon = rec_icon.Text,
+                Content = rec_content.Text,
+                Meal = spinner.SelectedItem.ToString(),
                 Deleted = false
             };
 
             try
             {
                 // Insert the new item into the local store.
-                await productTable.InsertAsync(item);
+                await recipeTable.InsertAsync(item);
+
                 if (!item.Deleted)
                 {
                     adapter.Add(item);
@@ -168,11 +173,9 @@ namespace bazafitness
                 CreateAndShowDialog(e, "Error");
             }
 
-            pro_name.Text = "";
-            pro_calories.Text = "";
-            pro_carbs.Text = "";
-            pro_fats.Text = "";
-            pro_proteins.Text = "";
+            rec_name.Text = "";
+            rec_icon.Text = "";
+            rec_content.Text = "";
         }
 
         private void CreateAndShowDialog(Exception exception, String title)

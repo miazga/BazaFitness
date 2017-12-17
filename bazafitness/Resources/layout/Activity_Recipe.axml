@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#71BCFA"
+        android:padding="6dip">
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="0.12"
+            android:text="Dodaj przepis"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#71BCFA"
+        android:padding="6dip"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/rec_icon"
+                android:inputType="text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="ICON">
+                <requestFocus />
+            </EditText>
+            <EditText
+                android:id="@+id/rec_name"
+                android:inputType="text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="NAME" />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/rec_content"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CONTENT (ex 3;kurczak;4;ryż;5;warzywa)" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="@string/meal_prompt" />
+        <Spinner
+            android:id="@+id/spinnerMeal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/meal_prompt" />
+        <Button
+            android:id="@+id/buttonAddProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="AddItem"
+            android:text="@string/add_button_text" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/listViewRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/row_list_recipe"
+        android:padding="6dip" />
+</LinearLayout>

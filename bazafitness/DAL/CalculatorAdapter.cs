@@ -12,13 +12,13 @@ using Android.Widget;
 
 namespace bazafitness.DAL
 {
-    public class ProductAdapter : BaseAdapter<Products>
+    class CalculatorAdapter : BaseAdapter<Recipe>
     {
         Activity activity;
         int layoutResourceId;
-        List<Products> items = new List<Products>();
+        List<Recipe> items = new List<Recipe>();
 
-        public ProductAdapter(Activity activity, int layoutResourceId)
+        public CalculatorAdapter(Activity activity, int layoutResourceId)
         {
             this.activity = activity;
             this.layoutResourceId = layoutResourceId;
@@ -29,39 +29,38 @@ namespace bazafitness.DAL
         {
             var row = convertView;
             var currentItem = this[position];
-            CheckBox checkBox;
+            //CheckBox checkBox;
+            TextView icon;
+            TextView name;
+            TextView content;
+            TextView meal;
 
             if (row == null)
             {
                 var inflater = activity.LayoutInflater;
                 row = inflater.Inflate(layoutResourceId, parent, false);
-
-                checkBox = row.FindViewById<CheckBox>(Resource.Id.checkProducts);
-
-                checkBox.CheckedChange += async (sender, e) => {
-                    var cbSender = sender as CheckBox;
-                    if (cbSender != null && cbSender.Tag is ProductWrapper && cbSender.Checked)
-                    {
-                        cbSender.Enabled = false;
-                        if (activity is MainActivity)
-                            await ((MainActivity)activity).CheckItem((cbSender.Tag as ProductWrapper).Products);
-                    }
-                };
+                
+                icon = row.FindViewById<TextView>(Resource.Id.txtIcon);
+                name = row.FindViewById<TextView>(Resource.Id.txtName);
+                content = row.FindViewById<TextView>(Resource.Id.txtContent);
+                meal = row.FindViewById<TextView>(Resource.Id.txtMeal);
             }
             else
-                checkBox = row.FindViewById<CheckBox>(Resource.Id.checkProducts);
-
-            checkBox.Text = string.Format("{0} | {1}g białka | {2}g węglowod | {3}g tłuszczów | {4}kcal",
-                currentItem.Name, currentItem.Proteins, currentItem.Carbohydrate, currentItem.Fats,
-                currentItem.Calories);
-            checkBox.Checked = false;
-            checkBox.Enabled = true;
-            checkBox.Tag = new ProductWrapper(currentItem);
+            {
+                icon = row.FindViewById<TextView>(Resource.Id.txtIcon);
+                name = row.FindViewById<TextView>(Resource.Id.txtName);
+                content = row.FindViewById<TextView>(Resource.Id.txtContent);
+                meal = row.FindViewById<TextView>(Resource.Id.txtMeal);
+            }
+            icon.Text = currentItem.Icon;
+            name.Text = currentItem.Name;
+            content.Text = currentItem.Content;
+            meal.Text = currentItem.Meal;
 
             return row;
         }
 
-        public void Add(Products item)
+        public void Add(Recipe item)
         {
             items.Add(item);
             NotifyDataSetChanged();
@@ -73,7 +72,7 @@ namespace bazafitness.DAL
             NotifyDataSetChanged();
         }
 
-        public void Remove(Products item)
+        public void Remove(Recipe item)
         {
             items.Remove(item);
             NotifyDataSetChanged();
@@ -94,7 +93,7 @@ namespace bazafitness.DAL
             }
         }
 
-        public override Products this[int position]
+        public override Recipe this[int position]
         {
             get
             {

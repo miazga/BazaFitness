@@ -8,32 +8,65 @@
 package bazafitness.bazafitness;
 
 public final class R {
+    public static final class array {
+        public static final int activity_array=0x7f050002;
+        public static final int meal_array=0x7f050000;
+        public static final int sex_array=0x7f050001;
+        public static final int target_array=0x7f050003;
+    }
     public static final class attr {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f070000;
-        public static final int buttonAddProducts=0x7f070003;
-        public static final int checkProducts=0x7f070005;
-        public static final int listViewProducts=0x7f070004;
-        public static final int menu_refresh=0x7f070006;
-        public static final int textNewProducts=0x7f070002;
-        public static final int textViewTitle=0x7f070001;
+        public static final int LinearLayout1=0x7f080000;
+        public static final int activity=0x7f080014;
+        public static final int age=0x7f080010;
+        public static final int btnAddProduct=0x7f08000e;
+        public static final int btnAddRecipe=0x7f08000f;
+        public static final int buttonAddProducts=0x7f080007;
+        public static final int checkProducts=0x7f08001a;
+        public static final int checkRecipe=0x7f08001b;
+        public static final int height=0x7f080011;
+        public static final int listViewProducts=0x7f080008;
+        public static final int listViewRecipes=0x7f08000d;
+        public static final int menu_refresh=0x7f08001c;
+        public static final int pro_calories=0x7f080003;
+        public static final int pro_carbs=0x7f080005;
+        public static final int pro_fats=0x7f080006;
+        public static final int pro_name=0x7f080002;
+        public static final int pro_proteins=0x7f080004;
+        public static final int rec_content=0x7f08000b;
+        public static final int rec_icon=0x7f080009;
+        public static final int rec_name=0x7f08000a;
+        public static final int sex=0x7f080013;
+        public static final int spinnerMeal=0x7f08000c;
+        public static final int target=0x7f080015;
+        public static final int textViewTitle=0x7f080001;
+        public static final int txtContent=0x7f080019;
+        public static final int txtIcon=0x7f080017;
+        public static final int txtMeal=0x7f080016;
+        public static final int txtName=0x7f080018;
+        public static final int weight=0x7f080012;
     }
     public static final class layout {
         public static final int activity_product=0x7f030000;
-        public static final int row_list_product=0x7f030001;
+        public static final int activity_recipe=0x7f030001;
+        public static final int calculator_layout=0x7f030002;
+        public static final int row_list_calculator=0x7f030003;
+        public static final int row_list_product=0x7f030004;
+        public static final int row_list_recipe=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_main=0x7f060000;
+        public static final int activity_main=0x7f070000;
     }
     public static final class string {
         public static final int add_button_text=0x7f040002;
         public static final int add_textbox_hint=0x7f040001;
         public static final int app_name=0x7f040000;
         public static final int checkbox_text=0x7f040005;
+        public static final int meal_prompt=0x7f040006;
         public static final int menu_refresh=0x7f040004;
         public static final int mobile_services=0x7f040003;
     }
@@ -59,10 +92,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f060001;
     }
 }
