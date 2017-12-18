@@ -100,14 +100,17 @@ namespace bazafitness
 			// aapt resource value: 0x7f08000f
 			public const int btnAddRecipe = 2131230735;
 			
+			// aapt resource value: 0x7f080016
+			public const int btnSubmit = 2131230742;
+			
 			// aapt resource value: 0x7f080007
 			public const int buttonAddProducts = 2131230727;
 			
-			// aapt resource value: 0x7f08001a
-			public const int checkProducts = 2131230746;
-			
 			// aapt resource value: 0x7f08001b
-			public const int checkRecipe = 2131230747;
+			public const int checkProducts = 2131230747;
+			
+			// aapt resource value: 0x7f08001c
+			public const int checkRecipe = 2131230748;
 			
 			// aapt resource value: 0x7f080011
 			public const int height = 2131230737;
@@ -118,8 +121,8 @@ namespace bazafitness
 			// aapt resource value: 0x7f08000d
 			public const int listViewRecipes = 2131230733;
 			
-			// aapt resource value: 0x7f08001c
-			public const int menu_refresh = 2131230748;
+			// aapt resource value: 0x7f08001d
+			public const int menu_refresh = 2131230749;
 			
 			// aapt resource value: 0x7f080003
 			public const int pro_calories = 2131230723;
@@ -157,17 +160,17 @@ namespace bazafitness
 			// aapt resource value: 0x7f080001
 			public const int textViewTitle = 2131230721;
 			
-			// aapt resource value: 0x7f080019
-			public const int txtContent = 2131230745;
-			
-			// aapt resource value: 0x7f080017
-			public const int txtIcon = 2131230743;
-			
-			// aapt resource value: 0x7f080016
-			public const int txtMeal = 2131230742;
+			// aapt resource value: 0x7f08001a
+			public const int txtContent = 2131230746;
 			
 			// aapt resource value: 0x7f080018
-			public const int txtName = 2131230744;
+			public const int txtIcon = 2131230744;
+			
+			// aapt resource value: 0x7f080017
+			public const int txtMeal = 2131230743;
+			
+			// aapt resource value: 0x7f080019
+			public const int txtName = 2131230745;
 			
 			// aapt resource value: 0x7f080012
 			public const int weight = 2131230738;

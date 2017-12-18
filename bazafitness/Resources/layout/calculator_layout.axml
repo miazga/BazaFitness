@@ -63,7 +63,7 @@
                 android:hint="Wzrost [cm]" />
             <EditText
                 android:id="@+id/weight"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -83,10 +83,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/buttonAddProducts"
+            android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="AddItem"
             android:text="Oblicz" />
     </LinearLayout>
     <ListView

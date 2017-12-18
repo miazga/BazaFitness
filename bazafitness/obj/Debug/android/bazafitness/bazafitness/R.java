@@ -25,13 +25,14 @@ public final class R {
         public static final int age=0x7f080010;
         public static final int btnAddProduct=0x7f08000e;
         public static final int btnAddRecipe=0x7f08000f;
+        public static final int btnSubmit=0x7f080016;
         public static final int buttonAddProducts=0x7f080007;
-        public static final int checkProducts=0x7f08001a;
-        public static final int checkRecipe=0x7f08001b;
+        public static final int checkProducts=0x7f08001b;
+        public static final int checkRecipe=0x7f08001c;
         public static final int height=0x7f080011;
         public static final int listViewProducts=0x7f080008;
         public static final int listViewRecipes=0x7f08000d;
-        public static final int menu_refresh=0x7f08001c;
+        public static final int menu_refresh=0x7f08001d;
         public static final int pro_calories=0x7f080003;
         public static final int pro_carbs=0x7f080005;
         public static final int pro_fats=0x7f080006;
@@ -44,10 +45,10 @@ public final class R {
         public static final int spinnerMeal=0x7f08000c;
         public static final int target=0x7f080015;
         public static final int textViewTitle=0x7f080001;
-        public static final int txtContent=0x7f080019;
-        public static final int txtIcon=0x7f080017;
-        public static final int txtMeal=0x7f080016;
-        public static final int txtName=0x7f080018;
+        public static final int txtContent=0x7f08001a;
+        public static final int txtIcon=0x7f080018;
+        public static final int txtMeal=0x7f080017;
+        public static final int txtName=0x7f080019;
         public static final int weight=0x7f080012;
     }
     public static final class layout {

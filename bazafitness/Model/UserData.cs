@@ -15,10 +15,11 @@ namespace bazafitness.Model
     public class UserData
     {
         public string Sex { get; set; }
-        public string Age { get; set; }
-        public string Height { get; set; }
-        public string Weight { get; set; }
+        public int Age { get; set; }
+        public int Height { get; set; }
+        public double Weight { get; set; }
         public string Activity { get; set; }
         public string Target { get; set; }
+        public double Energy { get; set; }//kcal
     }
 }

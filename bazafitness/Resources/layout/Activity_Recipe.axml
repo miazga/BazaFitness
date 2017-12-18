@@ -53,7 +53,7 @@
             android:inputType="textMultiLine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="CONTENT (ex 3;kurczak;4;ryż;5;warzywa)" />
+            android:hint="CONTENT (ex kurczak;4;ryż;5;warzywa;3)" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
