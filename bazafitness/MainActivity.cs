@@ -14,7 +14,7 @@ using Microsoft.WindowsAzure.MobileServices;
 
 namespace bazafitness
 {
-    [Activity(Label = "MainActivity")]
+    [Activity(Label = "Dodaj produkt")]
     public class MainActivity : Activity
     {
         // Client reference.
@@ -101,8 +101,7 @@ namespace bazafitness
                 var list = await productTable.Where(p => p.Deleted == false).ToListAsync();
 
                 adapter.Clear();
-
-                foreach (Products current in list)
+                foreach (Products current in list.OrderBy(x => x.Name).ThenBy(x => x.Calories))
                     adapter.Add(current);
 
             }
@@ -147,10 +146,10 @@ namespace bazafitness
             var item = new Products()
             {
                 Name = pro_name.Text,
-                Fats =Int32.Parse(pro_fats.Text),
+                Fats = Double.Parse(pro_fats.Text, System.Globalization.CultureInfo.InvariantCulture),
                 Calories = Int32.Parse(pro_calories.Text),
-                Carbohydrate = Int32.Parse(pro_carbs.Text),
-                Proteins = Int32.Parse(pro_proteins.Text),
+                Carbohydrate = Double.Parse(pro_carbs.Text, System.Globalization.CultureInfo.InvariantCulture),
+                Proteins = Double.Parse(pro_proteins.Text, System.Globalization.CultureInfo.InvariantCulture),
                 Deleted = false
             };
 

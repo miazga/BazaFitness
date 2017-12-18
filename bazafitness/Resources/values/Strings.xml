@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">bazafitness</string>
+	  <string name="app_name">Baza fitness</string>
     <string name="add_textbox_hint">Add a todo item</string>
     <string name="add_button_text">Add</string>
     <string name="mobile_services">Azure App Service</string>
-    <string name="menu_refresh">Refresh</string>
+    <string name="menu_refresh">Odśwież</string>
     <string name="checkbox_text">Item Text</string>
     <string name="meal_prompt">Wybierz porę obiadową</string>
+    <string name="category_prompt">Wybierz kategorię</string>
+    <string name="sex_prompt">Wybierz płeć</string>
+    <string name="activity_prompt">Wybierz poziom aktywności</string>
+    <string name="target_prompt">Wybierz swój cel</string>
     <string-array name="meal_array">
       <item>Śniadanie</item>
       <item>Obiad</item>
       <item>Kolacja</item>
     </string-array>
-  <string-array name="sex_array">
-    <item>Mężczyzna</item>
-    <item>Kobieta</item>
-  </string-array>
-  <string-array name="activity_array">
-    <item>Raczej siedząca</item>
-    <item>Umiarkowana</item>
-    <item>Dużo ruchu</item>
-  </string-array>
-  <string-array name="target_array">
-    <item>Spadek wagi</item>
-    <item>Utrzymanie wagi</item>
-    <item>Wzrost wagi</item>
-  </string-array>
+    <string-array name="sex_array">
+      <item>Mężczyzna</item>
+      <item>Kobieta</item>
+    </string-array>
+    <string-array name="activity_array">
+      <item>Raczej siedząca</item>
+      <item>Umiarkowana</item>
+      <item>Dużo ruchu</item>
+    </string-array>
+    <string-array name="target_array">
+      <item>Spadek wagi</item>
+      <item>Utrzymanie wagi</item>
+      <item>Wzrost wagi</item>
+    </string-array>
+    <string-array name="category_array">
+      <item>Na masę</item>
+      <item>Na redukcję</item>
+    </string-array>
 
 </resources>

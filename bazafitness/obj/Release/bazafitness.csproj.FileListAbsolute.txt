@@ -38,8 +38,11 @@ C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\res\drawable-hd
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\res\menu\activity_main.xml
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\res\values-v11\styles.xml
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\res\values-v14\styles.xml
+C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\res\drawable\meal.png
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\R.cs.flag
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\uploadflags.txt
+C:\Downloads\bazafitness_Xamarin_Android\bazafitness\bin\Release\bazafitness.dll.mdb
+C:\Downloads\bazafitness_Xamarin_Android\bazafitness\obj\Release\android\assets\bazafitness.dll.mdb
 C:\Downloads\bazafitness_Xamarin_Android\bazafitness\bin\Release\bazafitness.dll
 bin\Release\Mono.Android.pdb
 bin\Release\Mono.Android.Export.pdb

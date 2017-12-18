@@ -24,6 +24,8 @@ namespace bazafitness.DAL
         public string Icon { get; set; }
         [JsonProperty(PropertyName = "REC_MEAL")]
         public string Meal { get; set; }
+        [JsonProperty(PropertyName = "REC_CATEGORY")]
+        public string Category { get; set; }
         [JsonProperty(PropertyName = "checked")]
         public bool Deleted { get; set; }
 

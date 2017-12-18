@@ -34,6 +34,9 @@ namespace bazafitness
 			// aapt resource value: 0x7f050002
 			public const int activity_array = 2131034114;
 			
+			// aapt resource value: 0x7f050004
+			public const int category_array = 2131034116;
+			
 			// aapt resource value: 0x7f050000
 			public const int meal_array = 2131034112;
 			
@@ -72,6 +75,9 @@ namespace bazafitness
 			// aapt resource value: 0x7f020000
 			public const int ic_launcher = 2130837504;
 			
+			// aapt resource value: 0x7f020001
+			public const int meal = 2130837505;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -103,8 +109,8 @@ namespace bazafitness
 			// aapt resource value: 0x7f080016
 			public const int btnSubmit = 2131230742;
 			
-			// aapt resource value: 0x7f080007
-			public const int buttonAddProducts = 2131230727;
+			// aapt resource value: 0x7f080006
+			public const int buttonAddProducts = 2131230726;
 			
 			// aapt resource value: 0x7f08001b
 			public const int checkProducts = 2131230747;
@@ -115,8 +121,8 @@ namespace bazafitness
 			// aapt resource value: 0x7f080011
 			public const int height = 2131230737;
 			
-			// aapt resource value: 0x7f080008
-			public const int listViewProducts = 2131230728;
+			// aapt resource value: 0x7f080007
+			public const int listViewProducts = 2131230727;
 			
 			// aapt resource value: 0x7f08000d
 			public const int listViewRecipes = 2131230733;
@@ -124,41 +130,41 @@ namespace bazafitness
 			// aapt resource value: 0x7f08001d
 			public const int menu_refresh = 2131230749;
 			
-			// aapt resource value: 0x7f080003
-			public const int pro_calories = 2131230723;
-			
-			// aapt resource value: 0x7f080005
-			public const int pro_carbs = 2131230725;
-			
-			// aapt resource value: 0x7f080006
-			public const int pro_fats = 2131230726;
-			
 			// aapt resource value: 0x7f080002
-			public const int pro_name = 2131230722;
+			public const int pro_calories = 2131230722;
 			
 			// aapt resource value: 0x7f080004
-			public const int pro_proteins = 2131230724;
+			public const int pro_carbs = 2131230724;
 			
-			// aapt resource value: 0x7f08000b
-			public const int rec_content = 2131230731;
+			// aapt resource value: 0x7f080005
+			public const int pro_fats = 2131230725;
 			
-			// aapt resource value: 0x7f080009
-			public const int rec_icon = 2131230729;
+			// aapt resource value: 0x7f080001
+			public const int pro_name = 2131230721;
+			
+			// aapt resource value: 0x7f080003
+			public const int pro_proteins = 2131230723;
 			
 			// aapt resource value: 0x7f08000a
-			public const int rec_name = 2131230730;
+			public const int rec_content = 2131230730;
+			
+			// aapt resource value: 0x7f080008
+			public const int rec_icon = 2131230728;
+			
+			// aapt resource value: 0x7f080009
+			public const int rec_name = 2131230729;
 			
 			// aapt resource value: 0x7f080013
 			public const int sex = 2131230739;
 			
 			// aapt resource value: 0x7f08000c
-			public const int spinnerMeal = 2131230732;
+			public const int spinnerCategory = 2131230732;
+			
+			// aapt resource value: 0x7f08000b
+			public const int spinnerMeal = 2131230731;
 			
 			// aapt resource value: 0x7f080015
 			public const int target = 2131230741;
-			
-			// aapt resource value: 0x7f080001
-			public const int textViewTitle = 2131230721;
 			
 			// aapt resource value: 0x7f08001a
 			public const int txtContent = 2131230746;
@@ -235,6 +241,9 @@ namespace bazafitness
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040009
+			public const int activity_prompt = 2130968585;
+			
 			// aapt resource value: 0x7f040002
 			public const int add_button_text = 2130968578;
 			
@@ -243,6 +252,9 @@ namespace bazafitness
 			
 			// aapt resource value: 0x7f040000
 			public const int app_name = 2130968576;
+			
+			// aapt resource value: 0x7f040007
+			public const int category_prompt = 2130968583;
 			
 			// aapt resource value: 0x7f040005
 			public const int checkbox_text = 2130968581;
@@ -255,6 +267,12 @@ namespace bazafitness
 			
 			// aapt resource value: 0x7f040003
 			public const int mobile_services = 2130968579;
+			
+			// aapt resource value: 0x7f040008
+			public const int sex_prompt = 2130968584;
+			
+			// aapt resource value: 0x7f04000a
+			public const int target_prompt = 2130968586;
 			
 			static String()
 			{

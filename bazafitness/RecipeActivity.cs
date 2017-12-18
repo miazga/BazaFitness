@@ -14,7 +14,7 @@ using Microsoft.WindowsAzure.MobileServices;
 
 namespace bazafitness
 {
-    [Activity(Label = "RecipeActivity")]
+    [Activity(Label = "Dodaj przepis")]
     public class RecipeActivity : Activity
     {
         // Client reference.
@@ -28,7 +28,8 @@ namespace bazafitness
         private EditText rec_icon;
         private EditText rec_name;
         private EditText rec_content;
-        private Spinner spinner;
+        private Spinner spinnerMeal;
+        private Spinner spinnerCategory;
 
         // URL of the mobile app backend.
         const string applicationURL = @"https://bazafitness.azurewebsites.net";
@@ -56,13 +57,20 @@ namespace bazafitness
             var listViewToDo = FindViewById<ListView>(Resource.Id.listViewRecipes);
             listViewToDo.Adapter = adapter;
 
-            spinner = FindViewById<Spinner>(Resource.Id.spinnerMeal);
+            spinnerMeal = FindViewById<Spinner>(Resource.Id.spinnerMeal);
+            spinnerCategory = FindViewById<Spinner>(Resource.Id.spinnerCategory);
             
-            var spinnerAdapter = ArrayAdapter.CreateFromResource(
+            var spinnerMealAdapter = ArrayAdapter.CreateFromResource(
                 this, Resource.Array.meal_array, Android.Resource.Layout.SimpleSpinnerItem);
 
-            spinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = spinnerAdapter;
+            spinnerMealAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerMeal.Adapter = spinnerMealAdapter;
+
+            var spinnerCategoryAdapter = ArrayAdapter.CreateFromResource(
+                this, Resource.Array.category_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            spinnerCategoryAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerCategory.Adapter = spinnerCategoryAdapter;
 
             // Load the items from the mobile app backend.
             OnRefreshItemsSelected();
@@ -107,7 +115,7 @@ namespace bazafitness
 
                 adapter.Clear();
 
-                foreach (Recipe current in list)
+                foreach (Recipe current in list.OrderBy(x => x.Name).ThenBy(x => x.Meal))
                     adapter.Add(current);
 
             }
@@ -143,7 +151,7 @@ namespace bazafitness
         [Java.Interop.Export()]
         public async void AddItem(View view)
         {
-            if (client == null || string.IsNullOrWhiteSpace(rec_icon.Text) || string.IsNullOrWhiteSpace(rec_content.Text) || string.IsNullOrWhiteSpace(rec_name.Text) || string.IsNullOrWhiteSpace(spinner.SelectedItem.ToString()))
+            if (client == null || string.IsNullOrWhiteSpace(rec_icon.Text) || string.IsNullOrWhiteSpace(rec_content.Text) || string.IsNullOrWhiteSpace(rec_name.Text) || string.IsNullOrWhiteSpace(spinnerMeal.SelectedItem.ToString()))
             {
                 return;
             }
@@ -154,7 +162,8 @@ namespace bazafitness
                 Name = rec_name.Text,
                 Icon = rec_icon.Text,
                 Content = rec_content.Text,
-                Meal = spinner.SelectedItem.ToString(),
+                Meal = spinnerMeal.SelectedItem.ToString(),
+                Category = spinnerCategory.SelectedItem.ToString(),
                 Deleted = false
             };
 

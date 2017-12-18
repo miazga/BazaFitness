@@ -70,18 +70,36 @@
                 android:ems="10"
                 android:hint="Waga [kg]" />
         </LinearLayout>
+        <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="@string/sex_prompt" />
         <Spinner
             android:id="@+id/sex"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:prompt="@string/sex_prompt"/>
+        <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="@string/activity_prompt" />
         <Spinner
             android:id="@+id/activity"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/activity_prompt"/>
+        <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="@string/target_prompt" />
         <Spinner
             android:id="@+id/target"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/target_prompt"/>
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"

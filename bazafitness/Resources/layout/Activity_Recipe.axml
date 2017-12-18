@@ -9,20 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#71BCFA"
-        android:padding="6dip">
-        <TextView
-            android:id="@+id/textViewTitle"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="0.12"
-            android:text="Dodaj przepis"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#71BCFA"
         android:padding="6dip"
         android:orientation="vertical">
         <LinearLayout
@@ -64,6 +50,16 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/meal_prompt" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="@string/category_prompt" />
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/category_prompt" />
         <Button
             android:id="@+id/buttonAddProducts"
             android:layout_width="wrap_content"

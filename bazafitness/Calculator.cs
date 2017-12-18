@@ -17,7 +17,7 @@ namespace bazafitness
 {
     
     [Activity(MainLauncher = true,
-        Icon = "@drawable/ic_launcher", Label = "@string/app_name",
+        Icon = "@drawable/meal", Label = "@string/app_name",
         Theme = "@style/AppTheme")]
     public class Calculator : Activity
     {
@@ -178,10 +178,70 @@ namespace bazafitness
                 default: targetMultiplier = 1.0;
                     break;
             }
-            userData.Energy = (9.99 * userData.Weight + 6.25 * userData.Height + 4.92 * userData.Age + addOn) *
-                              activityMultiplier * targetMultiplier;
+            userData.Energy = Math.Round((9.99 * userData.Weight + 6.25 * userData.Height + 4.92 * userData.Age + addOn) *
+                              activityMultiplier * targetMultiplier);
         }
 
+        private async Task<Recipe> GetMealDescriptionAsync(string mealName, double mealEnergy)
+        {
+            var filter = string.Empty;
+
+            switch (userData.Target)
+            {
+                case "Spadek wagi":
+                    filter = "Na redukcję";
+                    break;
+                case "Wzrost wagi":
+                    filter = "Na masę";
+                    break;
+            }
+            List<Recipe> mealList;
+            if (string.IsNullOrEmpty(filter))
+            {
+                mealList =
+                    await recipeTable.Where(p =>
+                        p.Deleted == false && p.Meal == mealName).ToListAsync();
+            }
+            else
+            {
+                mealList =
+                    await recipeTable.Where(p =>
+                        p.Deleted == false && p.Meal == mealName && p.Category == filter).ToListAsync();
+            }
+            
+            var rand = new Random();
+            var meal = mealList[rand.Next(mealList.Count)];
+
+            var mealIngredients = new Dictionary<string, string>();
+            var IngTab = meal.Content.Split(';');
+            for (int i = 0; i < IngTab.Length; i += 2)
+            {
+                mealIngredients.Add(IngTab[i].Trim(), IngTab[i + 1].Trim());
+            }
+            var counter = 1.0;
+            var kcalCount = 0.0;
+            var proteinCount = 0.0;
+            var carbsCount = 0.0;
+            var fatsCount = 0.0;
+            string igredientsList = string.Empty;
+            foreach (var item in mealIngredients)
+            {
+                var productList = await productTable.Where(p => p.Deleted == false && p.Name == item.Key).ToListAsync();
+                var product = productList.FirstOrDefault();
+                var multiplier = Int32.Parse(item.Value);
+                kcalCount += product.Calories * multiplier;
+                proteinCount += product.Proteins * multiplier;
+                carbsCount += product.Carbohydrate * multiplier;
+                fatsCount += product.Fats * multiplier;
+                igredientsList += string.Format(" {0}x {1}", item.Value, item.Key);
+            }
+            counter = Math.Round((mealEnergy / kcalCount) * 2, MidpointRounding.AwayFromZero) / 2;
+            meal.Content =
+                string.Format(
+                    "{0}kcal w tym {1}g białka {2}g węglowodanów i {3}g tłuszczy\n{4} składa się z {5} porcji, w skład każdej porcji wchodzi:{6}",
+                    kcalCount * counter, proteinCount * counter, carbsCount * counter, fatsCount * counter, meal.Meal, counter, igredientsList);
+            return meal;
+        }
         //Refresh the list with the items in the local store.
         private async Task RefreshItemsFromTableAsync()
         {
@@ -193,130 +253,13 @@ namespace bazafitness
                 var dinnerEnergy = userData.Energy * 0.2;
                 string toast = string.Format("Potrzebujesz {0} kcal", userData.Energy);
                 Toast.MakeText(this, toast, ToastLength.Long).Show();
-
-                // Get the items that weren't marked as checked and add them in the adapter
-                var breakfastList =
-                    await recipeTable.Where(p => p.Deleted == false && p.Meal == "Śniadanie").ToListAsync();
-                var rand = new Random();
-                var breakfast = breakfastList[rand.Next(breakfastList.Count)];
-
-                var breakfastIngredients = new Dictionary<string, string>();
-                var IngTab = breakfast.Content.Split(';');
-                for (int i = 0; i < IngTab.Length; i += 2)
-                {
-                    breakfastIngredients.Add(IngTab[i].Trim(), IngTab[i + 1].Trim());
-                }
-                var counter = 1.0;
-                var kcalCount = 0.0;
-                var proteinCount = 0;
-                var carbsCount = 0;
-                var fatsCount = 0;
-                string igredientsList = string.Empty;
-                foreach (var item in breakfastIngredients)
-                {
-                    var productList = await productTable.Where(p => p.Deleted == false && p.Name == item.Key).ToListAsync();
-                    var product = productList.FirstOrDefault();
-                    var multiplier = Int32.Parse(item.Value);
-                    kcalCount += product.Calories * multiplier;
-                    proteinCount += product.Proteins * multiplier;
-                    carbsCount += product.Carbohydrate * multiplier;
-                    fatsCount += product.Fats * multiplier;
-                    igredientsList += string.Format(" {0}x {1}", item.Value, item.Key);
-                }
-                if (kcalCount < breakfastEnergy)
-                {
-                    //breakfastCounter = Convert.ToInt32(Math.Round(breakfastEnergy / kcalCount));
-                    counter = Math.Round((breakfastEnergy / kcalCount) * 2, MidpointRounding.AwayFromZero) / 2;
-                }
                 adapter.Clear();
-                breakfast.Content =
-                    string.Format(
-                        "{0}kcal w tym {1} białka {2} węglowodanów i {3} tłuszczy\n{4} składa się z {5} porcji, w skład każdej porcji wchodzi:{6}",
-                        kcalCount, proteinCount, carbsCount, fatsCount, breakfast.Meal,counter, igredientsList);
+                var breakfast = await GetMealDescriptionAsync("Śniadanie", breakfastEnergy);
                 adapter.Add(breakfast);
-
-                //obiad
-                var lunchList =
-                    await recipeTable.Where(p => p.Deleted == false && p.Meal == "Śniadanie").ToListAsync();
-                rand = new Random();
-                var lunch = lunchList[rand.Next(lunchList.Count)];
-
-                var lunchIngredients = new Dictionary<string, string>();
-                IngTab = lunch.Content.Split(';');
-                for (int i = 0; i < IngTab.Length; i += 2)
-                {
-                    lunchIngredients.Add(IngTab[i].Trim(), IngTab[i + 1].Trim());
-                }
-                counter = 1.0;
-                kcalCount = 0.0;
-                proteinCount = 0;
-                carbsCount = 0;
-                fatsCount = 0;
-                igredientsList = string.Empty;
-                foreach (var item in lunchIngredients)
-                {
-                    var productList = await productTable.Where(p => p.Deleted == false && p.Name == item.Key).ToListAsync();
-                    var product = productList.FirstOrDefault();
-                    var multiplier = Int32.Parse(item.Value);
-                    kcalCount += product.Calories * multiplier;
-                    proteinCount += product.Proteins * multiplier;
-                    carbsCount += product.Carbohydrate * multiplier;
-                    fatsCount += product.Fats * multiplier;
-                    igredientsList += string.Format(" {0}x {1}", item.Value, item.Key);
-                }
-                if (kcalCount < lunchEnergy)
-                {
-                    //breakfastCounter = Convert.ToInt32(Math.Round(breakfastEnergy / kcalCount));
-                    counter = Math.Round((lunchEnergy / kcalCount) * 2, MidpointRounding.AwayFromZero) / 2;
-                }
-                adapter.Clear();
-                breakfast.Content =
-                    string.Format(
-                        "{0}kcal w tym {1} białka {2} węglowodanów i {3} tłuszczy\n{4} składa się z {5} porcji, w skład każdej porcji wchodzi:{6}",
-                        kcalCount, proteinCount, carbsCount, fatsCount, lunch.Meal, counter, igredientsList);
+                var lunch = await GetMealDescriptionAsync("Obiad", lunchEnergy);
                 adapter.Add(lunch);
-
-                //kolacja
-                var dinnerList =
-                    await recipeTable.Where(p => p.Deleted == false && p.Meal == "Śniadanie").ToListAsync();
-                rand = new Random();
-                var dinner = dinnerList[rand.Next(lunchList.Count)];
-
-                var dinnerIngredients = new Dictionary<string, string>();
-                IngTab = dinner.Content.Split(';');
-                for (int i = 0; i < IngTab.Length; i += 2)
-                {
-                    dinnerIngredients.Add(IngTab[i].Trim(), IngTab[i + 1].Trim());
-                }
-                counter = 1.0;
-                kcalCount = 0.0;
-                proteinCount = 0;
-                carbsCount = 0;
-                fatsCount = 0;
-                igredientsList = string.Empty;
-                foreach (var item in dinnerIngredients)
-                {
-                    var productList = await productTable.Where(p => p.Deleted == false && p.Name == item.Key).ToListAsync();
-                    var product = productList.FirstOrDefault();
-                    var multiplier = Int32.Parse(item.Value);
-                    kcalCount += product.Calories * multiplier;
-                    proteinCount += product.Proteins * multiplier;
-                    carbsCount += product.Carbohydrate * multiplier;
-                    fatsCount += product.Fats * multiplier;
-                    igredientsList += string.Format(" {0}x {1}", item.Value, item.Key);
-                }
-                if (kcalCount < dinnerEnergy)
-                {
-                    //breakfastCounter = Convert.ToInt32(Math.Round(breakfastEnergy / kcalCount));
-                    counter = Math.Round((dinnerEnergy / kcalCount) * 2, MidpointRounding.AwayFromZero) / 2;
-                }
-                adapter.Clear();
-                breakfast.Content =
-                    string.Format(
-                        "{0}kcal w tym {1} białka {2} węglowodanów i {3} tłuszczy\n{4} składa się z {5} porcji, w skład każdej porcji wchodzi:{6}",
-                        kcalCount, proteinCount, carbsCount, fatsCount, dinner.Meal, counter, igredientsList);
+                var dinner = await GetMealDescriptionAsync("Kolacja", dinnerEnergy);
                 adapter.Add(dinner);
-
             }
             catch (Exception e)
             {
